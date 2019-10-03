@@ -1,0 +1,33 @@
+{
+  "name": "food",
+  "version": "1.0.0",
+  "description": "food project",
+  "author": "Masoud Shayannezhad",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.4.1",
+    "nuxt": "^2.0.0",
+    "nuxt-sass-resources-loader": "^2.0.5",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "7.1.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "node-sass": "^4.12.0"
+  }
+}

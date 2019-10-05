@@ -16,20 +16,19 @@ export default {
 <style lang="scss">
 
 .search__box-button {
+
     width: 250px;
-    height: 6.5vh;
+    height: 6vh;
     border-radius: 62px;
     background-color: #ffec9d;
-    transform: translateY(-5vh);
+    transform: translateY(-4vh);
     display: flex;
     align-items: center;
     justify-content: space-around;
 
 
     &-step {
-        // background-color: white;
-        // width: 2vw;
-        // height: 3vh;
+
         font-family: iranyekan;
         font-size: 22px;
         font-weight: bold;
@@ -42,13 +41,11 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: translateX(17px);
+        transform: translate(17px , 0.3vh);
     }
 
     &-text {
-        // background-color: black;
-        // width: 2vw;
-        // height: 3vh;
+
         font-family: iranyekan;
         font-size: 22px;
         font-weight: 500;

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="home__container">
     <div class="logo">
        <img class="logo__img" :src="require('../../../assets/img/logo@2x.png')" alt="logo">
     </div>
@@ -28,47 +28,37 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '../../../assets/sass/main.scss';
-body {
-  font-size: $base-font-size;
+
+  .home__container {
     min-height: 100vh;
     width: 100%;
-   .container {
-     min-height: 100vh;
-     width: 100%;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     align-items: center;
-     background-image: url('../../../assets/svg/Home/back.svg');
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('../../../assets/svg/Home/back.svg');
+        
+    .mainSVGContainer {
 
-              
-
-
-     .mainSVGContainer {
-
-
-       .map {
-         width: 90vw;
-         height: 90vh;
+      .map {
+        width: 90vw;
+        height: 90vh;
+      }
+    }
 
 
-       }
-     }
+    .logo {
+      display: flex;
+      align-items: flex-start;
 
+      .logo__img {
+        width: 11rem;
+        height: auto;
+        margin-top: 2rem;
+      }
+    }
 
-     .logo {
-       display: flex;
-       align-items: flex-start;
-
-       .logo__img {
-          width: 11rem;
-          height: auto;
-          margin-top: 2rem;
-       }
-     }
-
-  }
 }
+
 
 </style>

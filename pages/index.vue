@@ -1,5 +1,8 @@
 <template>
-  <app-Home ></app-Home>
+<div>
+    <app-Home ></app-Home>
+</div>
+
 </template>
 
 <script>

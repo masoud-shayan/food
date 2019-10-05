@@ -21,7 +21,13 @@ export default {
     ],
     script: [
       {src: "https://code.jquery.com/jquery-3.4.1.min.js",type: "text/javascript"}
-    ]
+    ],
+    
+    htmlAttrs: {
+      direction: 'rtl',
+      dir : 'rtl',
+      style : 'direction: rtl'
+    },
   },
   /*
   ** Customize the progress-bar color

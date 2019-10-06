@@ -1,6 +1,6 @@
 <template>
 <div class="search__box-button">
-    <div class="search__box-button-step">3/1</div>
+    <div class="search__box-button-step">3/{{$store.getters['selectedfoodPP/getSelectedFood']}}</div>
     <div class="search__box-button-text">ثبت</div>
 
 </div>

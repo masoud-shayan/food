@@ -17,7 +17,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.css' }
+      // { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.css' }
     ],
     script: [
       {src: "https://code.jquery.com/jquery-3.4.1.min.js",type: "text/javascript"}
@@ -37,6 +37,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/css/modern-normalize.css',
     '@/assets/sass/main.scss'
   ],
   /*

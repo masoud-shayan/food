@@ -112,6 +112,9 @@
         <path id="Path_4956" data-name="Path 4956" d="M164.208,393.846a5.178,5.178,0,0,0-.241,1.607v1.607H189.68v-1.607a5.179,5.179,0,0,0-.241-1.607Zm-6.428,6.428a5.179,5.179,0,0,0-.241,1.607v1.607h38.57v-1.607a5.179,5.179,0,0,0-.241-1.607Z" transform="translate(-123.209 -313.492)" fill="#d9a60e"/>
         <path id="Path_4958" data-name="Path 4958" d="M94.681,35.115V8.036A8.059,8.059,0,0,1,102.716,0H94.681a8.059,8.059,0,0,0-8.036,8.036V35.115A33.848,33.848,0,0,0,120.394,69.1a32.693,32.693,0,0,0,4.018-.241A33.848,33.848,0,0,1,94.681,35.115Z" transform="translate(-66.78)" fill="#d9a60e"/>
         </g>
+        <g id="Group_540" data-name="Group 540" transform="translate(455.477 490.393)">
+        <text id="اعلام_نتایج" data-name="اعلام نتایج" transform="translate(-6.477 15.607)" fill="#714508" font-size="16" font-family="iranyekan-Bold, iranyekan" font-weight="700" letter-spacing="-0.05em"><tspan x="67" y="0">اعلام نتایج</tspan></text>
+        </g>
 
         
         <g id="Component_2_1" data-name="Component 2 – 1" transform="translate(692.911 338.355)">
@@ -2743,7 +2746,8 @@ export default {
 
 <style lang="scss">
 
-#Province_435{
+
+[id^=Province_]:hover {
     fill: red;
 }
 

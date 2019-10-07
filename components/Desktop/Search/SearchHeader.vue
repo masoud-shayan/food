@@ -21,7 +21,7 @@ h2 {
     letter-spacing: normal;
     text-align: center;
     color: #fafafa;
-    margin-top: 20px;
+    margin: 0;
 }
 
 </style>

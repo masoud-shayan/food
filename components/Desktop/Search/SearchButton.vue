@@ -18,7 +18,7 @@ export default {
 .search__box-button {
 
     width: 250px;
-    height: 6vh;
+    height: 5vh;
     border-radius: 62px;
     background-color: #ffec9d;
     transform: translateY(-4vh);

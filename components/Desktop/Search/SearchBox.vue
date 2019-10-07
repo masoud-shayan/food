@@ -12,9 +12,9 @@
         <div class="search__box-body">
 
             <div class="search__box-body-content">
-                <label v-for="(f , index) in filteredFoodList " :key="index">
+                <label v-for="f  in filteredFoodList" :key="f.id">
                     <p >{{ f.title }}</p>
-                    <input type="checkbox" name="selectedFood" @click="maxChecked($event , f.id)" >
+                    <input type="checkbox" name="selectedFood" @click="maxChecked($event , f.id)">
                     <div :class="{divChecked : checkedFinder(f.id)}">
                         <img :src="require('../../../assets/img/check-mark@2x.png')" alt="checked" :class="{imgChecked : checkedFinder(f.id)}">
                     </div>
@@ -29,80 +29,84 @@ export default {
     data () {
         return {
             search : '',
-            foods :[],        
+            foods :[],
+            selectedFood :[]        
         }
     },
 
     methods: {
         maxChecked(event , id) {
 
-
-
             const maxAllowed = 3;
             let count = 0 ;
 
-            // count = $('input:checked').length
 
            let index = this.foods.findIndex(el => {
                 return el.id === id
-            })     
+            })  
 
-            this.foods[index].check = true
-
-
+            this.foods[index].check = !this.foods[index].check
+  
             this.foods.forEach(el => {
                 if(el.check) count++
             })
-
-
- 
+    
 
             if(count > maxAllowed){
-                event.target.checked = false
 
                 this.foods[index].check = false
 
             }else {
-
+      
                 this.$store.dispatch('selectedfoodPP/setSelectedFood' , count)
-                if(this.foods[index].check){
 
-                        this.foods[index].check = false
-                        event.target.checked = false
-
-                }else {
-
-                        this.foods[index].check = true
-                        event.target.checked = true
-
-                    }
-
-            }      
+            }
+                  
             
-
-        },
-        attach (event) {
-
         },
         checkedFinder (id) {
             let index = this.foods.findIndex(el => {
                 return el.id === id
             })
             return this.foods[index].check
+        },
+        isArabic (letter) {
+            if (typeof(letter) == "undefined" || letter == null) return false
+            
+
+            let code = letter.charCodeAt(0);
+            //1648 - superscript alif
+            //1619 - madd: ~
+            return (code == 1600 || code == 1648 || code >= 1612 && code <= 1631); //tashkee
+
+        },
+        fixArabic(input) {
+                let output = "";
+                //todo consider using a stringbuilder to improve performance
+                for (let i = 0; i < input.length; i++)
+                {
+                    let letter = input.charAt(i);
+                    if (!this.isArabic(letter)) //tashkeel
+                    output += letter;                                
+                }
+
+
+                return output;                     
         }
     },
     computed :{
         filteredFoodList () {
-
-            if(this.search){
-                return this.foods.filter( (food , index )=> {
-                    
-                     return food.title.startsWith(this.search)
+            let searchOutput = this.fixArabic(this.search) 
+            console.log(searchOutput)
+            if(searchOutput){
+                return this.foods.filter((food , index)=> { 
+                     return food.title.includes(searchOutput)
                 })
             }else{
                     return this.foods;
                 }
             console.log(this.foods) 
+
             },
          foodList () {
             let secondFoods = []
@@ -114,10 +118,12 @@ export default {
             this.foods = secondFoods 
 
             console.log(secondFoods)
-         }
+         },
+        searched () {
+            return this.fixArabic(this.search)
+        }
     },
-    watch : {
-    } ,
+  
 
     mounted (){
         this.foodList
@@ -131,7 +137,7 @@ export default {
 
 .search__box {
   width: 528px;
-  height: 81.5vh;
+  height: 70vh;
   opacity: 0.71;
   border-radius: 48px;
   background-color: #c18430;
@@ -140,6 +146,8 @@ export default {
   align-items: center;
   justify-content: flex-start;
   position: relative;
+
+
   
   &-head {
     display: flex;
@@ -157,7 +165,7 @@ export default {
   }
     .search__box-input {
         width: 476px;
-        height: 6vh;
+        height: 5vh;
         opacity: 0.3;
         border-radius: 62px;
         background-color: #000000;
@@ -192,7 +200,7 @@ export default {
 
   .search__box-body {
         width: 476px;
-        height: 67.5vh;
+        height: 58vh;
         font-family: iranyekan;
         font-size: 18px;
         font-weight: normal;
@@ -255,7 +263,7 @@ export default {
 
 
             label {
-                height: 8vh;
+                height: 6vh;
                 cursor: pointer;
                 user-select: none;
                 display: flex;

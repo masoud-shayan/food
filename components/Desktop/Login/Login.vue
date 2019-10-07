@@ -1,29 +1,21 @@
 <template>
-    <div class="register">
-        <h3>ثبت نام</h3>
+    <div class="login">
+        <h3>ورود به صفحه کاربری</h3>
         <client-only>
-        <form class="register__form" @submit.prevent="submit">
-        
+        <form class="login__form" @submit.prevent="submit">
             <div>
-                <input type="text" name="firstname" placeholder="نام" v-model.trim="firstName.title" 
-                @input="CheckValidity($event ,'firstName')">
+                <input type="text" name="email" placeholder="ایمیل" v-model.trim="email.title" 
+                @input="CheckValidity($event ,'email')">
             
             </div>
             <div>
-                <input type="text" name="lastname" placeholder="نام خانوادگی" v-model.trim="lastName.title" 
-                @input="CheckValidity($event ,'lastName')">
+                <input type="password" name="password" placeholder="رمز عبور" v-model.trim="password.title" 
+                @input="CheckValidity($event ,'password')">
                 <div class="errorcontainer">
 
                 </div>
             </div>
-            <div>
-                <input type="email" name="email" placeholder="ایمیل" v-model.trim="email.title" 
-                @input="CheckValidity($event ,'email')">
-                <div class="errorcontainer">
-
-                </div>
-            </div>
-            <button class="btn" @click.prevent="submitForm" :disabled="formValid" >ایجاد حساب کاربری</button>
+            <button class="btn" @click.prevent="submitForm" :disabled="formValid" >وارد شدن</button>
         </form>
         </client-only>
     </div>
@@ -36,16 +28,7 @@ export default {
         return {
             errors : [],
             formValid : false,
-            firstName : {
-                title : '',
-                isValidate: false,
-                rules : {
-                    required : true,
-                    maxlength : 15,
-                }
-
-            },
-            lastName : {
+            password : {
                 title : '',
                 isValidate: false,
                 rules : {
@@ -133,7 +116,7 @@ export default {
 
 <style lang="scss">
 
-.register {
+.login {
     height: 100vh;
     width: 100%;
     background-color: #cd9945;

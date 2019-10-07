@@ -44,7 +44,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: 'plugins/vuelidate', ssr: false }
+    { src: 'plugins/vee-validate',  mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -75,10 +75,17 @@ export default {
     middleware: ['userTypeDetector']
   },
   build: {
+
+
+    transpile: [
+      "vee-validate/dist/rules"
+    ],
+    
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
-    }
+	
+   extend(config, ctx) {
+  }
   }
 }

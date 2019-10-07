@@ -39,10 +39,11 @@ export default {
     background-image: url('../../../assets/svg/Home/back.svg');
         
     .mainSVGContainer {
+      transform: translateY(-40px);
 
       .map {
         width: 90vw;
-        height: 90vh;
+        height: 92vh;
       }
     }
 
@@ -54,7 +55,7 @@ export default {
       .logo__img {
         width: 11rem;
         height: auto;
-        margin-top: 2rem;
+        margin-top: 2vh;
       }
     }
 

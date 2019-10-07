@@ -2746,6 +2746,12 @@ export default {
 
 <style lang="scss">
 
+g #Group_540 text {
+    // fill: green;
+    // text-align: center;
+    direction: rtl;
+    }
+
 
 [id^=Province_]:hover {
     fill: red;

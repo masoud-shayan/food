@@ -26,6 +26,7 @@
 
 <script>
 export default {
+    props : ['P_ID'],
     data () {
         return {
             search : '',
@@ -108,14 +109,15 @@ export default {
             console.log(this.foods) 
 
             },
-         foodList () {
+        foodList () {
             let secondFoods = []
             let firstFoods = this.$store.state.fetchedfoodPP.foodList
+            // this.$store.dispatch('fetchedfoodPP/fetchFoodsListPP' , 4)
             let id = 0;
             firstFoods.forEach(el => {
                 secondFoods.push({title : el , check : false, id : id ++ })
             });
-            this.foods = secondFoods 
+            this.foods = secondFoods
 
             console.log(secondFoods)
          },

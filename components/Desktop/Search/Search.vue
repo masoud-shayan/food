@@ -5,12 +5,10 @@
                 <img class="logo__img" :src="require('../../../assets/img/delete@2x.png')" alt="logo">
             </div>
         </div>
-        <!-- <div class="logo">
-            <img class="logo__img" :src="require('../../../assets/img/logo@2x.png')" alt="logo">
-        </div> -->
+
 
         <app-SearchHeader></app-SearchHeader>
-        <app-SearchBox></app-SearchBox>
+        <app-SearchBox :pId="P_ID" ></app-SearchBox>
         <app-SearchButton></app-SearchButton>
         <div class="logo">
             <img class="logo__img" :src="require('../../../assets/svg/logo.svg')" alt="logo">
@@ -26,12 +24,25 @@ import SearchHeader from './SearchHeader'
 import SearchBox from './SearchBox'
 import SearchButton from './SearchButton'
 export default {
+    data(){
+        return {
+            P_ID : ''
+        }
+    },
     layout : 'default',
     components : {
         'app-SearchHeader' : SearchHeader,
         'app-SearchBox' : SearchBox,
         'app-SearchButton' : SearchButton
     },
+    mounted () {
+        // console.log(this.$route.query.Province_ID)
+        // if(this.$route.path)
+        this.P_ID = this.$route.query.Province_ID
+        console.log(this.$route.history)
+
+    }
+
  
 
 }
